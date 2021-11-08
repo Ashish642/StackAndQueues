@@ -11,6 +11,7 @@ public class MyQueue {
      */
     public void enqueue(int element) {
         MyNode node = new MyNode();
+        node.key = element;
         if (front == null) {
             front = node;
             rear = node;
@@ -21,7 +22,18 @@ public class MyQueue {
 
         }
     }
-    /* This Method is uded to display the element in Queue. */
+    /* This method is used to delete element from the queue */
+    public void dequeue() {
+        if (front == null)
+            System.out.println("Queue Underflow");
+        else {
+            MyNode temp = front;
+            System.out.println("Dequeued element is " + temp.key);
+            front = front.next;
+
+        }
+    }
+    /* This Method is used to display the element in Queue. */
     public void display() {
         if (front==null)
             System.out.println("Queue is empty");
